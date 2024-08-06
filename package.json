@@ -1,0 +1,64 @@
+{
+    "$schema": "./@types/schema/package/index.json",
+    "package_version": 2,
+    "name": "ui-autobinding",
+    "version": "1.0.0",
+    "author": "YYQ",
+    "editor": ">=3.8.2",
+    "scripts": {
+        "preinstall": "node ./scripts/preinstall.js",
+        "build": "tsc",
+        "watch": "tsc -w"
+    },
+    "description": "i18n:ui-autobinding.description",
+    "main": "./dist/main.js",
+    "devDependencies": {
+        "@cocos/creator-types": "^3.8.2",
+        "@types/node": "^18.17.1",
+        "typescript": "^4.3.4"
+    },
+    "contributions": {
+        "messages": {
+            "programming:compiled": {
+                "methods": [
+                    "onCompiledHandler"
+                ]
+            }
+        },
+        "asset-db": {
+            "mount": {
+                "path": "./assets",
+                "readonly": false
+            }
+        },
+        "scene": {
+            "script": "./dist/scene.js"
+        },
+        "inspector": {
+            "header": {
+                "node": {
+                    "cc.UITransform": "./dist/inspector-component.js",
+                    "cc.Label": "./dist/inspector-component.js",
+                    "cc.Sprite": "./dist/inspector-component.js",
+                    "cc.Button": "./dist/inspector-component.js",
+                    "cc.Layout": "./dist/inspector-component.js",
+                    "cc.ScrollView": "./dist/inspector-component.js",
+                    "cc.ProgressBar": "./dist/inspector-component.js",
+                    "cc.Widget": "./dist/inspector-component.js",
+                    "CButton": "./dist/inspector-component.js",
+                    "CLabel": "./dist/inspector-component.js",
+                    "CList": "./dist/inspector-component.js",
+                    "CNumberSelector": "./dist/inspector-component.js",
+                    "CToggle": "./dist/inspector-component.js",
+                    "CToggleContainer": "./dist/inspector-component.js",
+                    "CPicker": "./dist/inspector-component.js"
+                }
+            },
+            "section": {
+                "node": {
+                    "AutoBindingBase": "./dist/inspector-autobindingbase.js"
+                }
+            }
+        }
+    }
+}
